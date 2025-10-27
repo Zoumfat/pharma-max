@@ -1,0 +1,86 @@
+:root {
+  --pm-primary: #0f8b8d;
+  --pm-primary-dark: #0a5f61;
+  --pm-secondary: #0f4c81;
+  --pm-accent: #e7f6f6;
+  --pm-muted: #6c757d;
+  --pm-surface: #f5fbfc;
+  --pm-text: #213547;
+}
+
+body {
+  background: linear-gradient(180deg, rgba(231, 246, 246, 0.9), var(--pm-surface));
+  color: var(--pm-text);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.bg-primary {
+  background-color: var(--pm-primary) !important;
+}
+
+.text-primary {
+  color: var(--pm-secondary) !important;
+}
+
+.btn-primary {
+  background-color: var(--pm-secondary);
+  border-color: var(--pm-secondary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--pm-primary-dark);
+  border-color: var(--pm-primary-dark);
+}
+
+.btn-success {
+  background-color: var(--pm-primary);
+  border-color: var(--pm-primary);
+}
+
+.btn-success:hover,
+.btn-success:focus {
+  background-color: var(--pm-primary-dark);
+  border-color: var(--pm-primary-dark);
+}
+
+.navbar-brand {
+  letter-spacing: 0.04em;
+}
+
+.navbar-brand .brand-accent {
+  color: var(--pm-accent);
+}
+
+.bg-surface {
+  background-color: var(--pm-surface);
+}
+
+.module-card {
+  border-top: 4px solid var(--pm-primary);
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+}
+
+.module-card .card-title {
+  font-weight: 600;
+}
+
+.module-details dt {
+  font-weight: 500;
+}
+
+.badge.bg-label {
+  background-color: var(--pm-accent);
+  border: 1px solid rgba(15, 139, 141, 0.25);
+}
+
+.alert-info {
+  background-color: rgba(15, 139, 141, 0.12);
+  color: var(--pm-secondary);
+  border: 1px solid rgba(15, 139, 141, 0.2);
+}
+
+footer {
+  background-color: rgba(15, 76, 129, 0.05);
+}
