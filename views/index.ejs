@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pharma Max</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Pharma Max</h1>
+      <p>Gestion locale des articles pharmaceutiques</p>
+    </header>
+    <main>
+      <section>
+        <h2>Articles en stock</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Désignation</th>
+              <th>Stock</th>
+              <th>Prix (FCFA)</th>
+              <th>TVA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% articles.forEach((article) => { %>
+            <tr>
+              <td><%= article.code %></td>
+              <td><%= article.designation %></td>
+              <td><%= article.stock %></td>
+              <td><%= article.prix.toLocaleString("fr-FR") %></td>
+              <td><%= article.tva %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <footer>
+      <small>&copy; <%= new Date().getFullYear() %> Pharma Max</small>
+    </footer>
+  </body>
+</html>
