@@ -9,6 +9,7 @@ export default defineConfig({
     port: 5000,
     strictPort: true,
     hmr: false,
+    allowedHosts: true,
   },
   preview: {
     host: '0.0.0.0',
