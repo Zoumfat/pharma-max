@@ -1,5 +1,6 @@
 <%
   const pageTitle = 'Ajouter un article';
+  const activeNav = 'articles';
   const renderBody = function () {
 %>
   <div class="row justify-content-center">
@@ -48,4 +49,4 @@
   };
 %>
 
-<%- include('layout', { pageTitle, renderBody }) %>
+<%- include('layout', { pageTitle, renderBody, activeNav }) %>
