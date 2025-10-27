@@ -10,6 +10,7 @@ Pharma Max is a modern web application for pharmacy inventory management. The da
 - **October 27, 2025**: Initial GitHub import configured for Replit
   - Installed all frontend dependencies (React, Vite, Tailwind CSS, Recharts, React Router, Lucide React)
   - Configured Vite to serve on port 5000 with host 0.0.0.0 for Replit proxy support
+  - **Disabled HMR** (Hot Module Replacement) to prevent infinite refresh loops in Replit environment
   - Updated Express backend to use port 3001 (localhost) to avoid conflicts
   - Created workflow for Vite frontend development server
   - Configured deployment settings for production (autoscale with Vite preview)
@@ -96,7 +97,8 @@ The application is configured for Replit's autoscale deployment:
 ### Vite Configuration (`vite.config.js`)
 - Server host: `0.0.0.0` (allows Replit proxy)
 - Server port: `5000` (strict)
-- HMR client port: `5000`
+- **HMR disabled**: Hot Module Replacement is turned off to prevent connection issues in Replit's iframe environment
+- **Important**: You must manually refresh the browser to see code changes
 
 ### Tailwind Configuration
 - Dark mode: `class` based
