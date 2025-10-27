@@ -13,7 +13,7 @@ const __dirname = dirname(__filename);
 
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -29,6 +29,6 @@ app.get("/", (req, res) => {
   res.render("index", { articles });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, "localhost", () => {
   console.log(`🚀 Serveur local lancé sur http://localhost:${PORT}`);
 });
