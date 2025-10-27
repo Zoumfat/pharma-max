@@ -97,6 +97,7 @@ The application is configured for Replit's autoscale deployment:
 ### Vite Configuration (`vite.config.js`)
 - Server host: `0.0.0.0` (allows Replit proxy)
 - Server port: `5000` (strict)
+- **Allowed hosts**: Uses `['.repl.co', '.replit.dev']` to allow all Replit subdomains
 - **HMR disabled**: Hot Module Replacement is turned off to prevent connection issues in Replit's iframe environment
 - **Important**: You must manually refresh the browser to see code changes
 
