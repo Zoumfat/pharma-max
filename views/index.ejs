@@ -1,0 +1,56 @@
+<%
+  const pageTitle = 'Catalogue des articles';
+  const renderBody = function () {
+%>
+  <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-4">
+    <div>
+      <h1 class="h3 text-primary mb-1">Catalogue des articles</h1>
+      <p class="text-muted mb-0">Suivez en un coup d'œil les modules disponibles et leur stock.</p>
+    </div>
+    <a class="btn btn-success btn-lg" href="/articles/add">
+      Nouvel article
+    </a>
+  </div>
+
+  <div class="row g-3 g-lg-4">
+    <% if (!articles || articles.length === 0) { %>
+      <div class="col-12">
+        <div class="alert alert-info shadow-sm mb-0">
+          Aucun article enregistré pour le moment. Utilisez le bouton « Nouvel article » pour commencer.
+        </div>
+      </div>
+    <% } else { %>
+      <% articles.forEach((article) => { %>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card module-card h-100 shadow-sm border-0">
+            <div class="card-body d-flex flex-column">
+              <h2 class="h5 card-title text-primary mb-1"><%= article.designation %></h2>
+              <p class="card-subtitle text-muted small mb-3">Code article : <span class="badge bg-label text-primary"><%= article.code_article %></span></p>
+
+              <dl class="module-details small mb-4 flex-grow-1">
+                <div class="d-flex justify-content-between">
+                  <dt class="text-muted">Stock disponible</dt>
+                  <dd class="fw-semibold text-body"><%= article.stock %> unités</dd>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <dt class="text-muted">Prix unitaire</dt>
+                  <dd class="fw-semibold text-body">
+                    <%= article.prix_unitaire.toLocaleString('fr-FR', { style: 'currency', currency: 'XAF' }) %>
+                  </dd>
+                </div>
+              </dl>
+
+              <span class="badge <%= article.avec_tva ? 'bg-success' : 'bg-secondary' %> align-self-start">
+                <%= article.avec_tva ? 'TVA appliquée' : 'Sans TVA' %>
+              </span>
+            </div>
+          </article>
+        </div>
+      <% }); %>
+    <% } %>
+  </div>
+<%
+  };
+%>
+
+<%- include('layout', { pageTitle, renderBody }) %>
