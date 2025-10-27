@@ -1,27 +1,19 @@
 {
-  "name": "pharma-max-dashboard",
-  "private": true,
-  "version": "0.0.1",
+  "name": "pharma-max",
+  "version": "1.0.0",
+  "description": "Application web locale pour gestion de pharmacie",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
-    "lucide-react": "^0.344.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3",
-    "recharts": "^2.9.0"
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
   },
   "devDependencies": {
-    "@types/react": "^18.2.47",
-    "@types/react-dom": "^18.2.18",
-    "@vitejs/plugin-react": "^4.2.0",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.4.1",
-    "vite": "^5.0.8"
+    "nodemon": "^3.1.0"
   }
 }
